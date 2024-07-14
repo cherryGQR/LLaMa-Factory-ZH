@@ -1,0 +1,134 @@
+[WARNING|parser.py:273] 2024-07-11 00:59:54,743 >> `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+[INFO|parser.py:325] 2024-07-11 00:59:54,744 >> Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+
+[INFO|tokenization_utils_base.py:2159] 2024-07-11 00:59:54,745 >> loading file tokenizer.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-07-11 00:59:54,745 >> loading file added_tokens.json
+
+07/11/2024 00:59:54 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+07/11/2024 00:59:54 - INFO - llamafactory.hparams.parser - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+
+[INFO|tokenization_utils_base.py:2159] 2024-07-11 00:59:54,745 >> loading file special_tokens_map.json
+
+[INFO|tokenization_utils_base.py:2159] 2024-07-11 00:59:54,745 >> loading file tokenizer_config.json
+
+[WARNING|logging.py:313] 2024-07-11 00:59:54,956 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+[INFO|template.py:372] 2024-07-11 00:59:54,956 >> Add pad token: <|end_of_text|>
+
+[INFO|loader.py:50] 2024-07-11 00:59:54,957 >> Loading dataset alpaca_zh_demo.json...
+
+07/11/2024 00:59:55 - WARNING - transformers.tokenization_utils_base - Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+07/11/2024 00:59:55 - INFO - llamafactory.data.template - Add pad token: <|end_of_text|>
+
+07/11/2024 00:59:56 - INFO - llamafactory.data.loader - Loading dataset alpaca_zh_demo.json...
+
+[INFO|configuration_utils.py:731] 2024-07-11 00:59:59,011 >> loading configuration file /home/cherrygump/AI-Test/model/Meta-Llama-3-8B-Instruct/config.json
+
+[INFO|configuration_utils.py:800] 2024-07-11 00:59:59,011 >> Model config LlamaConfig {
+  "_name_or_path": "/home/cherrygump/AI-Test/model/Meta-Llama-3-8B-Instruct",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128001,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.42.3",
+  "use_cache": true,
+  "vocab_size": 128256
+}
+
+
+[INFO|modeling_utils.py:3553] 2024-07-11 00:59:59,026 >> loading weights file /home/cherrygump/AI-Test/model/Meta-Llama-3-8B-Instruct/model.safetensors.index.json
+
+[INFO|modeling_utils.py:1531] 2024-07-11 00:59:59,027 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+
+[INFO|configuration_utils.py:1000] 2024-07-11 00:59:59,027 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "eos_token_id": 128001
+}
+
+
+[INFO|modeling_utils.py:4364] 2024-07-11 01:00:02,801 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+
+[INFO|modeling_utils.py:4372] 2024-07-11 01:00:02,801 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /home/cherrygump/AI-Test/model/Meta-Llama-3-8B-Instruct.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+
+[INFO|configuration_utils.py:953] 2024-07-11 01:00:02,803 >> loading configuration file /home/cherrygump/AI-Test/model/Meta-Llama-3-8B-Instruct/generation_config.json
+
+[INFO|configuration_utils.py:1000] 2024-07-11 01:00:02,803 >> Generate config GenerationConfig {
+  "bos_token_id": 128000,
+  "do_sample": true,
+  "eos_token_id": [
+    128001,
+    128009
+  ],
+  "max_length": 4096,
+  "temperature": 0.6,
+  "top_p": 0.9
+}
+
+
+[INFO|checkpointing.py:103] 2024-07-11 01:00:02,806 >> Gradient checkpointing enabled.
+
+[INFO|attention.py:80] 2024-07-11 01:00:02,807 >> Using torch SDPA for faster training and inference.
+
+[INFO|adapter.py:302] 2024-07-11 01:00:02,807 >> Upcasting trainable params to float32.
+
+[INFO|adapter.py:158] 2024-07-11 01:00:02,807 >> Fine-tuning method: LoRA
+
+[INFO|misc.py:51] 2024-07-11 01:00:02,807 >> Found linear modules: k_proj,v_proj,up_proj,down_proj,gate_proj,q_proj,o_proj
+
+07/11/2024 01:00:02 - INFO - llamafactory.model.model_utils.checkpointing - Gradient checkpointing enabled.
+
+07/11/2024 01:00:02 - INFO - llamafactory.model.model_utils.attention - Using torch SDPA for faster training and inference.
+
+07/11/2024 01:00:02 - INFO - llamafactory.model.adapter - Upcasting trainable params to float32.
+
+07/11/2024 01:00:02 - INFO - llamafactory.model.adapter - Fine-tuning method: LoRA
+
+07/11/2024 01:00:02 - INFO - llamafactory.model.model_utils.misc - Found linear modules: down_proj,v_proj,q_proj,gate_proj,up_proj,k_proj,o_proj
+
+[INFO|loader.py:196] 2024-07-11 01:00:03,049 >> trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+07/11/2024 01:00:03 - INFO - llamafactory.model.loader - trainable params: 20,971,520 || all params: 8,051,232,768 || trainable%: 0.2605
+
+[INFO|trainer.py:642] 2024-07-11 01:00:03,058 >> Using auto half precision backend
+
+[INFO|trainer.py:2128] 2024-07-11 01:00:04,378 >> ***** Running training *****
+
+[INFO|trainer.py:2129] 2024-07-11 01:00:04,378 >>   Num examples = 736
+
+[INFO|trainer.py:2130] 2024-07-11 01:00:04,378 >>   Num Epochs = 3
+
+[INFO|trainer.py:2131] 2024-07-11 01:00:04,378 >>   Instantaneous batch size per device = 61
+
+[INFO|trainer.py:2134] 2024-07-11 01:00:04,378 >>   Total train batch size (w. parallel, distributed & accumulation) = 976
+
+[INFO|trainer.py:2135] 2024-07-11 01:00:04,378 >>   Gradient Accumulation steps = 8
+
+[INFO|trainer.py:2136] 2024-07-11 01:00:04,378 >>   Total optimization steps = 3
+
+[INFO|trainer.py:2137] 2024-07-11 01:00:04,381 >>   Number of trainable parameters = 20,971,520
+

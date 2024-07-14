@@ -1,0 +1,4 @@
+07/11/2024 01:13:25 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
+[WARNING|parser.py:273] 2024-07-11 01:13:25,377 >> `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+
